@@ -41,7 +41,6 @@
             box-shadow: 0 8px 16px rgba(0,0,0,0.1);
         }
 
-        /* Gamified Buttons */
         .btn {
             background-color: #16a34a;
             color: #ffffff;
@@ -73,12 +72,7 @@
 
         @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
 
-        .game-layout { 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            width: 100%;
-        }
+        .game-layout { display: flex; flex-direction: column; align-items: center; width: 100%; }
 
         .mission-tracker {
             background: #f1f5f9;
@@ -95,13 +89,12 @@
         .level-header { font-size: 32px; color: #16a34a; font-weight: bold; margin-bottom: 5px; }
         .disease-story { color: #475569; margin-bottom: 25px; font-size: 20px; font-style: italic; line-height: 1.4;}
         
-        /* Redesigned Gamified DNA Board (Tiles instead of plain text) */
         .dna-container {
             background: #1e293b; 
             padding: 25px;
             border-radius: 20px;
             display: flex;
-            flex-wrap: wrap; /* This prevents overflow! */
+            flex-wrap: wrap; 
             justify-content: center;
             gap: 6px;
             margin-bottom: 30px;
@@ -188,7 +181,6 @@
         .error { color: #991b1b; background-color: #fee2e2; border: 3px solid #fca5a5; }
         .info { color: #0369a1; background-color: #e0f2fe; border: 3px solid #7dd3fc;}
 
-        /* Crash Course Box */
         .crash-course {
             background: #e0f2fe;
             border: 3px solid #7dd3fc;
@@ -222,7 +214,7 @@
 
         <div class="crash-course">
             <h3 style="margin-top:0; font-size: 24px; text-transform: uppercase;">⚡ Quick Crash Course</h3>
-            <p><strong>CRISPR</strong> is a real-world scientific tool that bacteria have used for ages to defend themselves. It sort of acts like tiny molecular scissors. It can go into DNA, find a mutation causing a problem, and cut it out! CRISPR uses a guide to search through the long strands of genetic code to find the exact sequence it's looking for. Once found, an enzyme called Cas9 steps in and makes a clean cut. Once the cut is made, the cell instantly wants to repair the break. Exactly at that moment is when changes can be made: a faulty gene can be removed, a corrected version can be added, or a sequence can be switched off entireley. Think of it like silently rewritting a single line in a massive instruction manual and watching the entire system adjust. CRISPR doesn't fix everything, and it isn't perfect, but it's one of the most powerful tools modern biology has for understanding and potentially correcting genetic problems. </p>
+            <p><strong>CRISPR</strong> is a real-world scientific tool that acts like tiny molecular scissors. It can go into DNA, find a mutation causing a problem, and cut it out!</p>
             <p><strong>How the game works:</strong></p>
             <ul style="margin-bottom: 0;">
                 <li><strong>🛑 Step 1: The Anchor (PAM Sequence).</strong> The scissors can't cut unless they lock on. Find the code <strong>CC_</strong> in the DNA and click the FIRST 'C'.</li>
@@ -269,7 +261,6 @@
 </div>
 
 <script>
-    // --- MISSION DATA ---
     const levels = [
         {
             title: "Mission 1: Sparky the Space-Dog",
@@ -423,12 +414,23 @@
         }
     }
 
+    // UPDATED FUNCTION: Integrates the Google Form!
     function nextLevel() {
         currentLevelIndex++;
         if (currentLevelIndex < levels.length) {
             loadLevel();
         } else {
-            document.getElementById('game-screen').innerHTML = "<br><br><h1 style='font-size: 50px;'>🏆 GAME CLEARED!</h1><p style='color:#475569; font-size: 26px; margin-bottom: 40px;'>You successfully used CRISPR to fix every typo and save the day!</p><button class='btn btn-execute' onclick='location.reload()'>Play Again</button>";
+            document.getElementById('game-screen').innerHTML = `
+                <br><br>
+                <h1 style='font-size: 50px; color: #16a34a; text-shadow: 0 4px 0 #dcfce7;'>🏆 GAME CLEARED!</h1>
+                <p style='color:#475569; font-size: 24px; margin-bottom: 30px; line-height: 1.4;'>You successfully used CRISPR to fix every typo and save the day!<br><br><strong>Help us improve the simulation by leaving quick feedback!</strong></p>
+                
+                <a href="https://forms.gle/MzfShmtLjrB3LXQq5" target="_blank" style="text-decoration: none;">
+                    <button class='btn' style='background-color: #8b5cf6; box-shadow: 0 6px 0 #6d28d9; font-size: 26px; padding: 20px 40px; margin-bottom: 15px;'>📝 Submit Quick Feedback</button>
+                </a>
+                <br><br>
+                <button class='btn btn-secondary' style='font-size: 20px; max-width: 250px;' onclick='location.reload()'>Play Again</button>
+            `;
         }
     }
 </script>

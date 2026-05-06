@@ -4,47 +4,38 @@ const levels = [
         story: "Sparky has the 'Wobbly-Tail' mutation. Let's fix the typo in his DNA so he can wag his tail in zero gravity!",
         dna: "ATGAGTACTACGGTGCTAGCTAAGACCTAG", 
         correctPamIndex: 25, 
-        answer: "AUGAUGCCACGAUCGAUUCU",
-        // Cute Dog Photo
-        image: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZG9nfGVufDB8fDB8fHww"
+        answer: "AUGAUGCCACGAUCGAUUCU"
     },
     {
         title: "Mission 2: The Super-Tomato",
         story: "Bella's prize-winning tomato plant has a 'Frost-Bite' typo. Let's clear the mutation so it can survive the cold winter!",
         dna: "TTAGGATCGATCGATCGATCGATCGCCTAG", 
         correctPamIndex: 25, 
-        answer: "UAGCUAGCUAGCUAGCUAGC",
-        // Tomato Plant
-        image: "https://images.unsplash.com/photo-1592841200221-a6898f307baa?auto=format&fit=crop&w=400&q=80"
+        answer: "UAGCUAGCUAGCUAGCUAGC"
     },
     {
         title: "Mission 3: Alex the Astronaut",
         story: "Alex is experiencing 'Stardust-Fatigue' due to a typo in his energy cells. Let's use our scissors to help him explore the galaxy!",
         dna: "AATGATGACGTAAGCTAGTAGGCTACCTAG", 
         correctPamIndex: 25, 
-        answer: "ACUGCAUUCGAUCAUCCGAU",
-        // Floating Astronaut
-        image: "https://images.unsplash.com/photo-1541873676-a18131494184?auto=format&fit=crop&w=400&q=80" 
+        answer: "ACUGCAUUCGAUCAUCCGAU" 
     },
     {
         title: "Mission 4: The Deep-Sea Jelly",
         story: "A rare jellyfish has a 'Fading-Glow' mutation. Let's fix the typo so it can light up the dark ocean again!",
         dna: "ATATAGTGTAGTGATAATAGTAGTACCTAG", 
         correctPamIndex: 25, 
-        answer: "CACAUCACUAUUAUCAUCAU",
-        // Glowing Jellyfish
-        image: "https://images.unsplash.com/photo-1508311603478-ce574376c3cf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8amVsbHlmaXNofGVufDB8fDB8fHww" 
+        answer: "CACAUCACUAUUAUCAUCAU" 
     },
     {
         title: "Mission 5: The Dino-Clone",
         story: "Our cloned Triceratops has a 'Brittle-Horn' glitch. Let's fix the DNA instructions so he can play safely in the park!",
         dna: "TAGATATGATGTATGATGTATGACCGTATA", 
         correctPamIndex: 23, 
-        answer: "UAUACUACAUACUACAUACU",
-        // Cool Reptile/Dino vibe
-        image: "https://images.unsplash.com/photo-1633876204719-dd74580764ea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGlub3NhdXJ8ZW58MHx8MHx8fDA%3D" 
+        answer: "UAUACUACAUACUACAUACU" 
     }
 ];
+
 let currentLevelIndex = 0;
 let targetLocked = false;
 
@@ -59,14 +50,14 @@ function startGame() {
     currentLevelIndex = 0;
     showScreen('game-screen');
     
-    // --- NEW AUDIO CODE ---
+    // --- BACKGROUND MUSIC LOGIC ---
     let bgMusic = document.getElementById("game-audio");
-    bgMusic.volume = 0.2; // Sets the volume to a low 20%
-    bgMusic.play();
-    // ----------------------
+    if (bgMusic) { // This safety check stops the code from crashing!
+        bgMusic.volume = 0.2; 
+        bgMusic.play().catch(error => console.log("Audio waiting for user interaction."));
+    }
     
     loadLevel();
-}
 }
 
 function loadLevel() {
@@ -75,10 +66,6 @@ function loadLevel() {
     
     document.getElementById('mission-progress').innerText = "Mission " + (currentLevelIndex + 1) + " / " + levels.length;
     document.getElementById('level-title').innerText = level.title;
-    
-    // NEW: Updates the image for the specific mission
-    document.getElementById('mission-image').src = level.image;
-    
     document.getElementById('level-story').innerText = level.story;
     document.getElementById('message').innerText = "Step 1: Click the FIRST 'C' of the Anchor (CC_) to lock your scissors onto the DNA.";
     document.getElementById('message').className = "info";
@@ -140,10 +127,14 @@ function scanSequence(clickedIndex) {
     }
 }
 
-document.getElementById('rnaInput').addEventListener('input', function (e) {
-    let val = this.value.toUpperCase();
-    this.value = val.replace(/[^AUCG]/g, ''); 
-});
+// Fixed event listener to prevent crashing
+let rnaInputField = document.getElementById('rnaInput');
+if (rnaInputField) {
+    rnaInputField.addEventListener('input', function (e) {
+        let val = this.value.toUpperCase();
+        this.value = val.replace(/[^AUCG]/g, ''); 
+    });
+}
 
 function checkRNA() {
     const input = document.getElementById('rnaInput').value;

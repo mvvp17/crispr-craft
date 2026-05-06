@@ -5,8 +5,8 @@ const levels = [
         dna: "ATGAGTACTACGGTGCTAGCTAAGACCTAG", 
         correctPamIndex: 25, 
         answer: "AUGAUGCCACGAUCGAUUCU",
-        // Space Dog Vector
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Laika_%28dog%29.svg/400px-Laika_%28dog%29.svg.png"
+        // Cute Dog Photo
+        image: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZG9nfGVufDB8fDB8fHww"
     },
     {
         title: "Mission 2: The Super-Tomato",
@@ -15,7 +15,7 @@ const levels = [
         correctPamIndex: 25, 
         answer: "UAGCUAGCUAGCUAGCUAGC",
         // Tomato Plant
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tomato_je.jpg/400px-Tomato_je.jpg"
+        image: "https://images.unsplash.com/photo-1592841200221-a6898f307baa?auto=format&fit=crop&w=400&q=80"
     },
     {
         title: "Mission 3: Alex the Astronaut",
@@ -23,8 +23,8 @@ const levels = [
         dna: "AATGATGACGTAAGCTAGTAGGCTACCTAG", 
         correctPamIndex: 25, 
         answer: "ACUGCAUUCGAUCAUCCGAU",
-        // Floating Astronaut Clipart
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Astronaut-Space-Walk-clipart.svg/400px-Astronaut-Space-Walk-clipart.svg.png" 
+        // Floating Astronaut
+        image: "https://images.unsplash.com/photo-1541873676-a18131494184?auto=format&fit=crop&w=400&q=80" 
     },
     {
         title: "Mission 4: The Deep-Sea Jelly",
@@ -33,7 +33,7 @@ const levels = [
         correctPamIndex: 25, 
         answer: "CACAUCACUAUUAUCAUCAU",
         // Glowing Jellyfish
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Pelagia_noctiluca_%28Sardinia%29.jpg/400px-Pelagia_noctiluca_%28Sardinia%29.jpg" 
+        image: "https://images.unsplash.com/photo-1508311603478-ce574376c3cf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8amVsbHlmaXNofGVufDB8fDB8fHww" 
     },
     {
         title: "Mission 5: The Dino-Clone",
@@ -41,11 +41,10 @@ const levels = [
         dna: "TAGATATGATGTATGATGTATGACCGTATA", 
         correctPamIndex: 23, 
         answer: "UAUACUACAUACUACAUACU",
-        // Triceratops Cartoon
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Triceratops_illustration.svg/400px-Triceratops_illustration.svg.png" 
+        // Cool Reptile/Dino vibe
+        image: "https://images.unsplash.com/photo-1633876204719-dd74580764ea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGlub3NhdXJ8ZW58MHx8MHx8fDA%3D" 
     }
 ];
-
 let currentLevelIndex = 0;
 let targetLocked = false;
 

@@ -7,18 +7,9 @@ body {
     padding: 40px 10px;
     margin: 0;
     display: flex;
+    flex-direction: column; /* THIS FIXES THE FOOTER! */
     justify-content: center;
     align-items: center;
-}
-.container {
-    width: 100%;
-    max-width: 900px;
-    background: #ffffff;
-    padding: 40px 30px;
-    border-radius: 25px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    border: 5px solid #86efac; 
-    box-sizing: border-box;
 }
 
 h1 { color: #16a34a; font-size: 42px; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 4px 0 #dcfce7;}

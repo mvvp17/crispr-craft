@@ -15,7 +15,7 @@
         <h1>🧬 CRISPR-Craft</h1>
         <p style="color: #64748b; font-size: 22px; margin-bottom: 25px;">Become a Gene Hero. Fix mutations. Save the day.</p>
         
-        <img src="https://images.unsplash.com/photo-1637929476734-bd7f5f78e40a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG5hfGVufDB8fDB8fHww" alt="DNA Image" class="hero-graphic" style="border-radius: 15px; max-width: 300px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/DNA_orbit_animated.gif/400px-DNA_orbit_animated.gif" alt="DNA Animation" class="hero-graphic">
 
         <button class="btn" style="font-size: 26px;" onclick="startGame()">▶ Start Game</button><br>
         <button class="btn btn-secondary" onclick="showScreen('rules-screen')">📖 How to Play</button>
@@ -38,18 +38,20 @@
     </div>
 
     <div id="game-screen">
-        <div class="mission-tracker" id="mission-progress">Mission 1 / 5</div>
-        <div class="level-header" id="level-title">Mission 1</div>
-        
-        <img id="mission-image" src="" alt="Mission Graphic" style="width: 100%; max-width: 280px; border-radius: 15px; margin: 10px auto 25px auto; display: block; box-shadow: 0 8px 16px rgba(0,0,0,0.1); object-fit: cover; height: 180px;">
 
+        <div class="mission-tracker" id="mission-progress">Mission 1 / 5</div>
+
+        <div class="level-header" id="level-title">Mission 1</div>
         <div class="disease-story" id="level-story">Loading...</div>
+        
         <div id="message" class="info">Click the FIRST 'C' of the Anchor (CC_) to lock your scissors onto the DNA.</div>
         
         <div class="game-layout">
+            
             <div class="dna-container" id="dna-board"></div>
 
             <div id="input-section">
+                
                 <div class="vertical-cheat-sheet">
                     <div class="cheat-row"><span class="color-A">A (Red)</span> ➔ <span>U</span></div>
                     <div class="cheat-row"><span class="color-T">T (Yellow)</span> ➔ <span>A</span></div>
@@ -58,6 +60,7 @@
                 </div>
 
                 <input type="text" id="rnaInput" maxlength="20" placeholder="ENTER SECRET KEY">
+                
                 <button class="btn btn-execute" onclick="checkRNA()">✂️ Execute Cas9 Cut!</button>
             </div>
             
@@ -66,16 +69,16 @@
             </div>
         </div>
     </div>
-</div>
 
+</div>
 <div style="text-align: center; margin-top: 20px; padding-bottom: 30px; font-size: 13px; color: #64748b; line-height: 1.8; width: 100%;">
     <p>
         <strong>CRISPR-Craft</strong><br>
         Project Creator & Designer: Emily Yim<br>
         Visual Assets: <a href="https://unsplash.com/" target="_blank" style="color: #0ea5e9; text-decoration: none;">Unsplash</a> & Giphy
     </p>
-</div>
 
+</div>
 <script src="script.js"></script>
 </body>
 </html>

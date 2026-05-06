@@ -4,35 +4,45 @@ const levels = [
         story: "Sparky has the 'Wobbly-Tail' mutation. Let's fix the typo in his DNA so he can wag his tail in zero gravity!",
         dna: "ATGAGTACTACGGTGCTAGCTAAGACCTAG", 
         correctPamIndex: 25, 
-        answer: "AUGAUGCCACGAUCGAUUCU"
+        answer: "AUGAUGCCACGAUCGAUUCU",
+        // Space Dog Vector
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Laika_%28dog%29.svg/400px-Laika_%28dog%29.svg.png"
     },
     {
         title: "Mission 2: The Super-Tomato",
         story: "Bella's prize-winning tomato plant has a 'Frost-Bite' typo. Let's clear the mutation so it can survive the cold winter!",
         dna: "TTAGGATCGATCGATCGATCGATCGCCTAG", 
         correctPamIndex: 25, 
-        answer: "UAGCUAGCUAGCUAGCUAGC"
+        answer: "UAGCUAGCUAGCUAGCUAGC",
+        // Tomato Plant
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tomato_je.jpg/400px-Tomato_je.jpg"
     },
     {
         title: "Mission 3: Alex the Astronaut",
         story: "Alex is experiencing 'Stardust-Fatigue' due to a typo in his energy cells. Let's use our scissors to help him explore the galaxy!",
         dna: "AATGATGACGTAAGCTAGTAGGCTACCTAG", 
         correctPamIndex: 25, 
-        answer: "ACUGCAUUCGAUCAUCCGAU" 
+        answer: "ACUGCAUUCGAUCAUCCGAU",
+        // Floating Astronaut Clipart
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Astronaut-Space-Walk-clipart.svg/400px-Astronaut-Space-Walk-clipart.svg.png" 
     },
     {
         title: "Mission 4: The Deep-Sea Jelly",
         story: "A rare jellyfish has a 'Fading-Glow' mutation. Let's fix the typo so it can light up the dark ocean again!",
         dna: "ATATAGTGTAGTGATAATAGTAGTACCTAG", 
         correctPamIndex: 25, 
-        answer: "CACAUCACUAUUAUCAUCAU" 
+        answer: "CACAUCACUAUUAUCAUCAU",
+        // Glowing Jellyfish
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Pelagia_noctiluca_%28Sardinia%29.jpg/400px-Pelagia_noctiluca_%28Sardinia%29.jpg" 
     },
     {
         title: "Mission 5: The Dino-Clone",
         story: "Our cloned Triceratops has a 'Brittle-Horn' glitch. Let's fix the DNA instructions so he can play safely in the park!",
         dna: "TAGATATGATGTATGATGTATGACCGTATA", 
         correctPamIndex: 23, 
-        answer: "UAUACUACAUACUACAUACU" 
+        answer: "UAUACUACAUACUACAUACU",
+        // Triceratops Cartoon
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Triceratops_illustration.svg/400px-Triceratops_illustration.svg.png" 
     }
 ];
 
@@ -58,6 +68,10 @@ function loadLevel() {
     
     document.getElementById('mission-progress').innerText = "Mission " + (currentLevelIndex + 1) + " / " + levels.length;
     document.getElementById('level-title').innerText = level.title;
+    
+    // NEW: Updates the image for the specific mission
+    document.getElementById('mission-image').src = level.image;
+    
     document.getElementById('level-story').innerText = level.story;
     document.getElementById('message').innerText = "Step 1: Click the FIRST 'C' of the Anchor (CC_) to lock your scissors onto the DNA.";
     document.getElementById('message').className = "info";

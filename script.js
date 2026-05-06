@@ -58,7 +58,15 @@ function showScreen(screenId) {
 function startGame() {
     currentLevelIndex = 0;
     showScreen('game-screen');
+    
+    // --- NEW AUDIO CODE ---
+    let bgMusic = document.getElementById("game-audio");
+    bgMusic.volume = 0.2; // Sets the volume to a low 20%
+    bgMusic.play();
+    // ----------------------
+    
     loadLevel();
+}
 }
 
 function loadLevel() {

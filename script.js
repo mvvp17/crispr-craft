@@ -49,14 +49,6 @@ function showScreen(screenId) {
 function startGame() {
     currentLevelIndex = 0;
     showScreen('game-screen');
-    
-    // --- BACKGROUND MUSIC LOGIC ---
-    let bgMusic = document.getElementById("game-audio");
-    if (bgMusic) { // This safety check stops the code from crashing!
-        bgMusic.volume = 0.2; 
-        bgMusic.play().catch(error => console.log("Audio waiting for user interaction."));
-    }
-    
     loadLevel();
 }
 
@@ -127,14 +119,10 @@ function scanSequence(clickedIndex) {
     }
 }
 
-// Fixed event listener to prevent crashing
-let rnaInputField = document.getElementById('rnaInput');
-if (rnaInputField) {
-    rnaInputField.addEventListener('input', function (e) {
-        let val = this.value.toUpperCase();
-        this.value = val.replace(/[^AUCG]/g, ''); 
-    });
-}
+document.getElementById('rnaInput').addEventListener('input', function (e) {
+    let val = this.value.toUpperCase();
+    this.value = val.replace(/[^AUCG]/g, ''); 
+});
 
 function checkRNA() {
     const input = document.getElementById('rnaInput').value;

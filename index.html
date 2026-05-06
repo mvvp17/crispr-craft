@@ -42,16 +42,17 @@
         <div class="mission-tracker" id="mission-progress">Mission 1 / 5</div>
 
         <div class="level-header" id="level-title">Mission 1</div>
+        
+        <img id="mission-image" src="" alt="Mission Graphic" style="width: 100%; max-width: 280px; border-radius: 15px; margin: 10px auto 25px auto; display: block; box-shadow: 0 8px 16px rgba(0,0,0,0.1);">
+
         <div class="disease-story" id="level-story">Loading...</div>
         
         <div id="message" class="info">Click the FIRST 'C' of the Anchor (CC_) to lock your scissors onto the DNA.</div>
         
         <div class="game-layout">
-            
             <div class="dna-container" id="dna-board"></div>
 
             <div id="input-section">
-                
                 <div class="vertical-cheat-sheet">
                     <div class="cheat-row"><span class="color-A">A (Red)</span> ➔ <span>U</span></div>
                     <div class="cheat-row"><span class="color-T">T (Yellow)</span> ➔ <span>A</span></div>
@@ -60,7 +61,6 @@
                 </div>
 
                 <input type="text" id="rnaInput" maxlength="20" placeholder="ENTER SECRET KEY">
-                
                 <button class="btn btn-execute" onclick="checkRNA()">✂️ Execute Cas9 Cut!</button>
             </div>
             
@@ -70,6 +70,14 @@
         </div>
     </div>
 
+</div>
+
+<div style="text-align: center; margin-top: 50px; padding-bottom: 30px; font-size: 14px; color: #64748b; line-height: 1.6;">
+    <p><strong>CRISPR-Craft</strong> created by Emily Yim.</p>
+    <p>
+        <a href="https://www.flaticon.com/free-animated-icons/dna" title="dna animated icons" target="_blank" style="color: #0ea5e9; text-decoration: none;">DNA animated icons created by Freepik - Flaticon</a><br>
+        Mission images sourced via <a href="https://commons.wikimedia.org/" target="_blank" style="color: #0ea5e9; text-decoration: none;">Wikimedia Commons</a> (Public Domain / CC0).
+    </p>
 </div>
 
 <script src="script.js"></script>

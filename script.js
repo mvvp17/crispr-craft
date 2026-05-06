@@ -4,35 +4,40 @@ const levels = [
         story: "Sparky has the 'Wobbly-Tail' mutation. Let's fix the typo in his DNA so he can wag his tail in zero gravity!",
         dna: "ATGAGTACTACGGTGCTAGCTAAGACCTAG", 
         correctPamIndex: 25, 
-        answer: "AUGAUGCCACGAUCGAUUCU"
+        answer: "AUGAUGCCACGAUCGAUUCU",
+        imageUrl: "https://images.unsplash.com/photo-1582456891925-a53965520520?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y3V0ZSUyMGRvZ3xlbnwwfHwwfHx8MA%3D%3D"
     },
     {
         title: "Mission 2: The Super-Tomato",
         story: "Bella's prize-winning tomato plant has a 'Frost-Bite' typo. Let's clear the mutation so it can survive the cold winter!",
         dna: "TTAGGATCGATCGATCGATCGATCGCCTAG", 
         correctPamIndex: 25, 
-        answer: "UAGCUAGCUAGCUAGCUAGC"
+        answer: "UAGCUAGCUAGCUAGCUAGC",
+        imageUrl: "https://images.unsplash.com/photo-1518977822534-7049a61ee0c2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         title: "Mission 3: Alex the Astronaut",
         story: "Alex is experiencing 'Stardust-Fatigue' due to a typo in his energy cells. Let's use our scissors to help him explore the galaxy!",
         dna: "AATGATGACGTAAGCTAGTAGGCTACCTAG", 
         correctPamIndex: 25, 
-        answer: "ACUGCAUUCGAUCAUCCGAU" 
+        answer: "ACUGCAUUCGAUCAUCCGAU",
+        imageUrl: "https://images.unsplash.com/photo-1541873676-a18131494184?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXN0cm9uYXV0fGVufDB8fDB8fHww"
     },
     {
         title: "Mission 4: The Deep-Sea Jelly",
         story: "A rare jellyfish has a 'Fading-Glow' mutation. Let's fix the typo so it can light up the dark ocean again!",
         dna: "ATATAGTGTAGTGATAATAGTAGTACCTAG", 
         correctPamIndex: 25, 
-        answer: "CACAUCACUAUUAUCAUCAU" 
+        answer: "CACAUCACUAUUAUCAUCAU",
+        imageUrl: "https://images.unsplash.com/photo-1508311603478-ce574376c3cf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8amVsbHlmaXNofGVufDB8fDB8fHww"
     },
     {
         title: "Mission 5: The Dino-Clone",
         story: "Our cloned Triceratops has a 'Brittle-Horn' glitch. Let's fix the DNA instructions so he can play safely in the park!",
         dna: "TAGATATGATGTATGATGTATGACCGTATA", 
         correctPamIndex: 23, 
-        answer: "UAUACUACAUACUACAUACU" 
+        answer: "UAUACUACAUACUACAUACU",
+        imageUrl: "https://plus.unsplash.com/premium_photo-1740927392124-b089cccf7409?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHRyaWNlcmF0b3BzfGVufDB8fDB8fHww"
     }
 ];
 
@@ -59,6 +64,17 @@ function loadLevel() {
     document.getElementById('mission-progress').innerText = "Mission " + (currentLevelIndex + 1) + " / " + levels.length;
     document.getElementById('level-title').innerText = level.title;
     document.getElementById('level-story').innerText = level.story;
+    
+    // --- THIS IS THE NEW IMAGE LOGIC ---
+    const missionImg = document.getElementById('mission-image');
+    if (level.imageUrl) {
+        missionImg.src = level.imageUrl;
+        missionImg.style.display = "block";
+    } else {
+        missionImg.style.display = "none";
+    }
+    // -----------------------------------
+
     document.getElementById('message').innerText = "Step 1: Click the FIRST 'C' of the Anchor (CC_) to lock your scissors onto the DNA.";
     document.getElementById('message').className = "info";
     document.getElementById('input-section').style.display = "none";
